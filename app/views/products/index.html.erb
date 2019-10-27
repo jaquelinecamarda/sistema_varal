@@ -1,0 +1,27 @@
+  
+<div class="container">
+  <h2>Lista de produtos</h2>
+  <% if flash[:success] != nil %>
+    <div class="alert alert-success" role="alert">
+      <%= flash[:success] %>
+    </div>
+  <% end %>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Descrição</th>
+      <th scope="col">Cor</th>
+      <th scope="col">Quantidade</th>
+      <th scope="col">Custo Unitário</th>
+      <th scope="col">Custo Produção</th>
+      <th scope="col">Preço de Venda</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |banana| %> 
+        <%= render 'product_item', item: banana %> <!--renderiza _product_item (partial) que organiza a tabela-->
+    <% end %>
+  </tbody>
+</table>
+<a href="<%= products_new_path %>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Novo Produto</a>
+</div>
