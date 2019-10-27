@@ -2,11 +2,8 @@
   <div class="container">
     <h2>Cadastrar produto</h2>
     <% if flash[:error] != nil %>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <div class="alert alert-danger" role="alert">
       <%= flash[:error] %>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
     </div>
      <% end %>
     <form>
