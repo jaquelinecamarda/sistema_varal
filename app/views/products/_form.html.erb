@@ -21,15 +21,15 @@
       </div>
       <div class="form-group">
         <label for="unit_cost">Custo</label>
-        <%= form.number_field :unit_cost, class: "form-control", placeholder: "Ex. 5.00", required: "true" %>
+        <%= form.number_field :unit_cost, step: 0.01, class: "form-control", placeholder: "Ex. 5.00", required: "true" %>
       </div>
       <div class="form-group">
         <label for="product_cost">Produção</label>
-        <%= form.number_field :product_cost, class: "form-control", placeholder: "Ex. 1.50", required: "true" %>
+        <%= form.number_field :product_cost, step: 0.01, class: "form-control", placeholder: "Ex. 1.50", required: "true" %>
       </div>
       <div class="form-group">
         <label for="price">Preço</label>
-        <%= form.number_field :price, class: "form-control", placeholder: "Ex. 5.00", required: "true" %>
+        <%= form.number_field :price, step: 0.01, class: "form-control", placeholder: "Ex. 5.00", required: "true" %>
       </div>
       <%= form.submit "Salvar", class: "btn btn-primary" %>
     </form>

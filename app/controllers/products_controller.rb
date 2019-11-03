@@ -14,7 +14,18 @@ class ProductsController < ApplicationController
     end
   end
 
-  def delete
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      flash[:success] = 'Product uptaded successfully'
+      redirect_to products_path # se der certo o usuário e redirecionado p/ listagem de products
+    else
+      flash[:error] = @product.errors.full_messages.first
+      render :edit
+    end
+  end
+
+  def destroy
     product = Product.find(params[:id])
     product.destroy
     redirect_to products_path
