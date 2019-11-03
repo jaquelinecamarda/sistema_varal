@@ -6,7 +6,7 @@
   <td><%= "R$ #{item.product_cost}" %></td>
   <td><%= "R$ #{item.price}" %></td>
   <td>
-  <a href="#" class="btn btn-outline-primary btn-sm " role="button" aria-pressed="true">Editar</a>
-  <%= link_to "Excluir", "/products/#{item.id}", :method => :delete, class: "btn btn-outline-danger btn-sm", role: "button"%>
+  <a href=<%= edit_product_path(item) %> class="btn btn-outline-primary btn-sm " role="button" aria-pressed="true">Editar</a>
+  <%= link_to "Excluir", product_path(item), :method => :delete, class: "btn btn-outline-danger btn-sm", role: "button"%>
   </td>
 </tr>
