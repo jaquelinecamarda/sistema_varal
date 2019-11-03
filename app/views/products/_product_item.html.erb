@@ -7,6 +7,6 @@
   <td><%= "R$ #{item.price}" %></td>
   <td>
   <a href="#" class="btn btn-outline-primary btn-sm " role="button" aria-pressed="true">Editar</a>
-  <a href="#" class="btn btn-outline-danger btn-sm " role="button" aria-pressed="true">Excluir</a>
+  <%= link_to "Excluir", "/products/#{item.id}", :method => :delete, class: "btn btn-outline-danger btn-sm", role: "button"%>
   </td>
 </tr>
