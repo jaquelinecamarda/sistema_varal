@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: [:edit, :update, :destroy]
+
   def new
     @product = Product.new
   end
@@ -49,5 +51,9 @@ class ProductsController < ApplicationController
             :product_cost,
             :price
           )
+  end
+
+  def set_product
+    @products = Product.find(params[:id])
   end
 end
