@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: [:edit, :update, :destroy]
+
   def new
     @product = Product.new
   end
@@ -15,7 +17,6 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update(product_params)
       flash[:success] = 'Product uptaded successfully'
       redirect_to products_path # se der certo o usuário e redirecionado p/ listagem de products
@@ -26,13 +27,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product = Product.find(params[:id])
     product.destroy
     redirect_to products_path
   end
 
   def edit
-    @product = Product.find(params[:id])
   end
 
   def index
@@ -49,5 +48,9 @@ class ProductsController < ApplicationController
             :product_cost,
             :price
           )
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 end
