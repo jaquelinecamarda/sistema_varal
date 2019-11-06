@@ -17,7 +17,6 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update(product_params)
       flash[:success] = 'Product uptaded successfully'
       redirect_to products_path # se der certo o usuário e redirecionado p/ listagem de products
@@ -28,13 +27,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product = Product.find(params[:id])
     product.destroy
     redirect_to products_path
   end
 
   def edit
-    @product = Product.find(params[:id])
   end
 
   def index
@@ -54,6 +51,6 @@ class ProductsController < ApplicationController
   end
 
   def set_product
-    @products = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 end
